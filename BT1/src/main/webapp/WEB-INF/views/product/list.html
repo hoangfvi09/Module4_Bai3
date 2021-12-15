@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <table border="1" cellpadding="5">
+        <caption><h2>Product List</h2></caption>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Color</th>
+            <th>Description</th>
+            <th>Category</th>
+        </tr>
+        <tr th:each="product,productStat : ${productList} ">
+            <td th:text="${productList.get(productStat.index).id}"></td>
+            <td th:text="${productList.get(productStat.index).name}"></td>
+            <td th:text="${productList.get(productStat.index).price}"></td>
+            <td th:text="${productList.get(productStat.index).quantity}"></td>
+            <td th:text="${productList.get(productStat.index).color}"></td>
+            <td th:text="${productList.get(productStat.index).description}"></td>
+            <td th:text="${categoryList.get(productStat.index).name}"></td>
+            <td>
+                <a th:href="@{/edit/__${productList.get(productStat.index).id}__}">Edit</a>
+                <a th:href="@{/delete/__${productList.get(productStat.index).id}__}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

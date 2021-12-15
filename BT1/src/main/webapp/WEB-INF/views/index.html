@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="/list">List All Products</a>
+<a href="/create">Create New Product</a>
+
+<form action="/find">
+    <input type="text" name ="name">
+    <input type="hidden" name="action" value="find">
+    <button>Find</button>
+</form>
+</body>
+</html>
